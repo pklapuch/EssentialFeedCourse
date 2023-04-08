@@ -13,11 +13,11 @@ public struct FeedItem: Equatable {
     public let location: String?
     public let imageURL: URL
     
-    public init(id: UUID, description: String? = nil, location: String? = nil, imageUR: URL) {
+    public init(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) {
         self.id = id
         self.description = description
         self.location = location
-        self.imageURL = imageUR
+        self.imageURL = imageURL
     }
 }
 
