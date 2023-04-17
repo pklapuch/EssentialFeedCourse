@@ -45,7 +45,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             case let .failure(receivedError as NSError):
                 XCTAssertEqual(receivedError, error)
             default:
-                XCTFail("expected \(error), got: \(result)")
+                XCTFail("expected failure with \(error), got: \(result) instead")
             }
             exp.fulfill()
         }
