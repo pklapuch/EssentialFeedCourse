@@ -66,7 +66,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
             
             guard let stub = stubs[request.url!] else  {
-                fatalError("stub not set for url: \(request.url)")
+                fatalError("stub not set for url: \(request.url?.absoluteString ?? "--")")
             }
             completionHandler(nil, nil, stub.error)
             return stub.task
