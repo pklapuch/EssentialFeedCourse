@@ -1,2 +1,4 @@
+[![Build Status](https://app.travis-ci.com/pklapuch/EssentialFeedCourse.svg?branch=main)](https://app.travis-ci.com/pklapuch/EssentialFeedCourse)
+
 # EssentialFeedCourse
-Sample App following essential feed course.
+Training Course
