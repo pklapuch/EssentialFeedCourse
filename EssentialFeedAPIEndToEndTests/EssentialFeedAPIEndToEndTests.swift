@@ -29,8 +29,8 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
         wait(for: [exp], timeout: 20.0)
         
         switch receivedResult {
-        case let .success(items):
-            XCTAssertEqual(items.count, 8, "expected 8 items in the test account feed")
+        case let .success(feed):
+            XCTAssertEqual(feed.count, 8, "expected 8 items in the test account feed")
         case let .failure(error):
             XCTFail("expected success, got error: \(error)")
         case .none:
