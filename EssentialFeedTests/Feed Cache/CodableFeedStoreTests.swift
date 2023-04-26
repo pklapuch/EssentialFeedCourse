@@ -73,21 +73,8 @@ final class CodableFeedStoreTests: XCTestCase {
     
     func test_retrieve_hasNoSideEffectsOnEmptyCache() throws {
         let sut = makeSUT()
-        let exp = expectation(description: "wait for completion")
         
-        sut.retrieve { firstResult in
-            sut.retrieve { secondResult in
-                switch (firstResult, secondResult) {
-                case (.empty, .empty):
-                    break
-                default:
-                    XCTFail("expected `.empty, .empty`, but got \(firstResult) and \(secondResult)")
-                }
-                exp.fulfill()
-            }
-        }
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toRetrieveTwice: .empty)
     }
     
     func test_retrieveAfterInsertingToEmptyCache_deliversInsertedValues() throws {
@@ -132,6 +119,14 @@ final class CodableFeedStoreTests: XCTestCase {
     }
     
     private func expect(_ sut: CodableFeedStore,
+                        toRetrieveTwice expectedResult: RetrievedCachedFeedResult,
+                        file: StaticString = #file,
+                        line: UInt = #line) {
+        expect(sut, toRetrieve: .empty)
+        expect(sut, toRetrieve: .empty)
+    }
+    
+    private func expect(_ sut: CodableFeedStore,
                         toRetrieve expectedResult: RetrievedCachedFeedResult,
                         file: StaticString = #file,
                         line: UInt = #line) {
@@ -154,7 +149,7 @@ final class CodableFeedStoreTests: XCTestCase {
         
         wait(for: [exp], timeout: 1.0)
     }
-    
+
     private func testSpecificStoreURL() -> URL {
         let filename = "\(type(of: self)).store"
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appending(path: filename)
