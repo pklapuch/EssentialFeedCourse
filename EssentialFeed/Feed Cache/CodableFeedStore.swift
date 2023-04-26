@@ -78,6 +78,7 @@ public class CodableFeedStore: FeedStore {
     
     public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
         let storeURL = storeURL
+        
         queue.async(flags: .barrier) {
             do {
                 if FileManager.default.fileExists(atPath: storeURL.path()) {
