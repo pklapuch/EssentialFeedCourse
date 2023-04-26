@@ -190,14 +190,14 @@ final class CodableFeedStoreTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(storeURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
+    private func makeSUT(storeURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> FeedStore {
         let sut = CodableFeedStore(storeURL: storeURL ?? testSpecificStoreURL())
         trackForMmeoryLeaks(sut, file: file, line: line)
         return sut
     }
     
     @discardableResult
-    private func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: CodableFeedStore) -> Error? {
+    private func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: FeedStore) -> Error? {
         let exp = expectation(description: "wait for cache insertion")
         var receivedError: Error?
         sut.insert(cache.feed, timestamp: cache.timestamp) { insertionError in
@@ -208,7 +208,7 @@ final class CodableFeedStoreTests: XCTestCase {
         return receivedError
     }
     
-    private func delete(from sut: CodableFeedStore, file: StaticString = #file, line: UInt = #line) -> Error? {
+    private func delete(from sut: FeedStore, file: StaticString = #file, line: UInt = #line) -> Error? {
         let exp = expectation(description: "wait for completion")
         var receivedError: Error?
         
@@ -221,7 +221,7 @@ final class CodableFeedStoreTests: XCTestCase {
         return receivedError
     }
     
-    private func expect(_ sut: CodableFeedStore,
+    private func expect(_ sut: FeedStore,
                         toRetrieveTwice expectedResult: RetrievedCachedFeedResult,
                         file: StaticString = #file,
                         line: UInt = #line) {
@@ -229,7 +229,7 @@ final class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: expectedResult)
     }
     
-    private func expect(_ sut: CodableFeedStore,
+    private func expect(_ sut: FeedStore,
                         toRetrieve expectedResult: RetrievedCachedFeedResult,
                         file: StaticString = #file,
                         line: UInt = #line) {
