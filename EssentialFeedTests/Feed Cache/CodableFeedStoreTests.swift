@@ -60,6 +60,17 @@ class CodableFeedStore {
             completion(error)
         }
     }
+    
+    func deleteCachedFeed(completion: @escaping FeedStore.DeletionCompletion) {
+        do {
+            if FileManager.default.fileExists(atPath: storeURL.path()) {
+                try FileManager.default.removeItem(at: storeURL)
+            }
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
 }
 
 final class CodableFeedStoreTests: XCTestCase {
@@ -149,6 +160,34 @@ final class CodableFeedStoreTests: XCTestCase {
         XCTAssertNotNil(insertionError)
     }
     
+    func test_delete_hasNoSideEffectsOnEmptyCache() {
+        let sut = makeSUT()
+
+        let deleteionError = delete(from: sut)
+        XCTAssertNil(deleteionError)
+        
+        expect(sut, toRetrieve: .empty)
+    }
+    
+    func test_delete_emptiesPreviouslyInsertedCache() {
+        let sut = makeSUT()
+        let insertionError = insert((uniqueImageFeed().local, Date()), to: sut)
+        XCTAssertNil(insertionError)
+        
+        let deleteionError = delete(from: sut)
+        XCTAssertNil(deleteionError)
+        
+        expect(sut, toRetrieve: .empty)
+    }
+    
+    func test_delete_deliversErrorOnDeletionError() {
+        let noDeletePermissionURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let sut = makeSUT(storeURL: noDeletePermissionURL)
+        
+        let deletionError = delete(from: sut)
+        XCTAssertNotNil(deletionError)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(storeURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
@@ -165,6 +204,19 @@ final class CodableFeedStoreTests: XCTestCase {
             receivedError = insertionError
             exp.fulfill()
         }
+        wait(for: [exp], timeout: 1.0)
+        return receivedError
+    }
+    
+    private func delete(from sut: CodableFeedStore, file: StaticString = #file, line: UInt = #line) -> Error? {
+        let exp = expectation(description: "wait for completion")
+        var receivedError: Error?
+        
+        sut.deleteCachedFeed { deletionError in
+            receivedError = deletionError
+            exp.fulfill()
+        }
+        
         wait(for: [exp], timeout: 1.0)
         return receivedError
     }
