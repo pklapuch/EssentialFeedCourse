@@ -114,7 +114,7 @@ final class CodableFeedStoreTests: XCTestCase {
         
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        expect(sut, toRetrieve: .failure(anyNSError()))
+        expect(sut, toRetrieveTwice: .failure(anyNSError()))
     }
     
     // MARK: - Helpers
@@ -138,8 +138,8 @@ final class CodableFeedStoreTests: XCTestCase {
                         toRetrieveTwice expectedResult: RetrievedCachedFeedResult,
                         file: StaticString = #file,
                         line: UInt = #line) {
-        expect(sut, toRetrieve: .empty)
-        expect(sut, toRetrieve: .empty)
+        expect(sut, toRetrieve: expectedResult)
+        expect(sut, toRetrieve: expectedResult)
     }
     
     private func expect(_ sut: CodableFeedStore,
