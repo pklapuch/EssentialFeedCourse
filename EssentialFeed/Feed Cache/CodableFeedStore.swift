@@ -81,7 +81,7 @@ public class CodableFeedStore: FeedStore {
         
         queue.async(flags: .barrier) {
             do {
-                if FileManager.default.fileExists(atPath: storeURL.path()) {
+                if FileManager.default.fileExists(atPath: storeURL.path) {
                     try FileManager.default.removeItem(at: storeURL)
                 }
                 completion(nil)

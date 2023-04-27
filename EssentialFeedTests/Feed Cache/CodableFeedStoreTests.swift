@@ -152,7 +152,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs, FeedStore
     
     private func testSpecificStoreURL() -> URL {
         let filename = "\(type(of: self)).store"
-        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appending(path: filename)
+        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent(filename)
     }
     
     private func cachesDirectory() -> URL {
