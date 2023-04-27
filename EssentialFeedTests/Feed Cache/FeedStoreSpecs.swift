@@ -8,12 +8,18 @@
 import Foundation
 
 protocol FeedStoreSpecs {
-    func test_retrieve_deliversEmptyOnEmptyCache() throws
-    func test_retrieve_hasNoSideEffectsOnEmptyCache() throws
-    func test_retrieve_deliversFoundValuesOnNonEmptyCache() throws
-    func test_retrieve_hasNoSideEffectsOnNonEmptyCache() throws
-    func test_insert_overridesPreviouslyInsertedCachedValues()
+    func test_retrieve_deliversEmptyOnEmptyCache()
+    func test_retrieve_hasNoSideEffectsOnEmptyCache()
+    func test_retrieve_deliversFoundValuesOnNonEmptyCache()
+    func test_retrieve_hasNoSideEffectsOnNonEmptyCache()
+    
+    func test_insert_deliversNoErrorOnEmptyCache()
+    func test_insert_deliversNoErrorOnNonEmptyCache()
+    func test_insert_overridesPreviouslyInsertedCacheValues()
+    
+    func test_delete_deliversNoErrorOnEmptyCache()
     func test_delete_hasNoSideEffectsOnEmptyCache()
+    func test_delete_deliversNoErrorOnNonEmptyCache()
     func test_delete_emptiesPreviouslyInsertedCache()
     
     func test_storeSideEffects_runSerially()
@@ -31,5 +37,7 @@ protocol FailableInsertFeedStoreSpecs: FeedStoreSpecs {
 
 protocol FailableDeleteFeedStoreSpecs: FeedStoreSpecs {
     func test_delete_deliversErrorOnDeletionError()
-    func test_delete_hasNoSideEffectsOnEmptyCache()
+    func test_delete_hasNoSideEffectsOnDeletionError()
 }
+
+typealias FailableFeedStoreSpecs = FailableRetrieveFeedStoreSpecs & FailableInsertFeedStoreSpecs & FailableDeleteFeedStoreSpecs
