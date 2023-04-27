@@ -12,7 +12,8 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
     
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
-        let client = URLSessionHTTPClient()
+        let session = URLSession(configuration: .ephemeral)
+        let client = URLSessionHTTPClient(session: session)
         let loader = RemoteFeedLoader(url: testServerURL, client: client)
         
         trackForMmeoryLeaks(client)
@@ -28,8 +29,8 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
         wait(for: [exp], timeout: 20.0)
         
         switch receivedResult {
-        case let .success(items):
-            XCTAssertEqual(items.count, 8, "expected 8 items in the test account feed")
+        case let .success(feed):
+            XCTAssertEqual(feed.count, 8, "expected 8 items in the test account feed")
         case let .failure(error):
             XCTFail("expected success, got error: \(error)")
         case .none:

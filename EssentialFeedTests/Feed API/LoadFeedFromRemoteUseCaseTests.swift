@@ -1,5 +1,5 @@
 //
-//  RemoteFeedLoaderTests.swift
+//  LoadFeedFromRemoteUseCaseTests.swift
 //  EssentialFeedTests
 //
 //  Created by Pawel Klapuch on 3/25/23.
@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-final class RemoteFeedLoaderTests: XCTestCase {
+final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     func test_init_doesNotRequestDataFromURL() {
         let (_, spy) = makeSUT()
 
@@ -109,7 +109,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         client.complete(withStatusCode: 200, data: makeItemsJSON([]))
         XCTAssertTrue(capturedResults.isEmpty)
-        
     }
     
     // MARK: - Helpers
@@ -153,9 +152,9 @@ final class RemoteFeedLoaderTests: XCTestCase {
     private func makeItem(id: UUID,
                           description: String? = nil,
                           location: String? = nil,
-                          imageURL: URL) -> (model: FeedItem, json: [String: Any]) {
+                          imageURL: URL) -> (model: FeedImage, json: [String: Any]) {
         
-        let item = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
+        let item = FeedImage(id: id, description: description, location: location, url: imageURL)
         
         let json = [
             "id": id.uuidString,
