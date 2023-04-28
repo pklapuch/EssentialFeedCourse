@@ -161,11 +161,7 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
             "description": description,
             "location": location,
             "image": imageURL.absoluteString
-        ].reduce(into: [String: Any](), { acc, e in
-            if let value = e.value {
-                acc[e.key] = value
-            }
-        })
+        ].compactMapValues { $0 }
         return (item, json)
     }
     
@@ -179,10 +175,10 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     }
     
     class HTTPClientSpy: HTTPClient {
-        private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
+        private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
         var requestedURLs: [URL] { messages.map { $0.url }}
         
-        func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
+        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
             messages.append((url, completion))
         }
         
@@ -193,7 +189,7 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         func complete(withStatusCode code: Int, data: Data, at index: Int = 0) {
             let url = messages[index].url
             let response = HTTPURLResponse(url: url, statusCode: code, httpVersion: nil, headerFields: nil)!
-            messages[index].completion(.success(data, response))
+            messages[index].completion(.success((data, response)))
         }
     }
 }
