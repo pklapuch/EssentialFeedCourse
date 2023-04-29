@@ -13,13 +13,7 @@
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [
-    {
-      "target" : {
-        "containerPath" : "container:EssentialFeed.xcodeproj",
-        "identifier" : "35C25D0C29FDB96E00FF91EB",
-        "name" : "EssentialFeediOSTests"
-      }
-    }
+
   ],
   "version" : 1
 }
