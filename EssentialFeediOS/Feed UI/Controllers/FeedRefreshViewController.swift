@@ -6,21 +6,13 @@
 //
 
 import UIKit
-import EssentialFeed
 
 final class FeedRefreshViewController: NSObject {
-    private(set) lazy var view: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
-        return refreshControl
-    }()
+    private(set) lazy var view: UIRefreshControl = binded(UIRefreshControl())
+    private let viewModel: FeedViewModel
     
-    private let feedLoader: FeedLoader
-    
-    var onRefresh: (([FeedImage]) -> Void)?
-    
-    init(feedLoader: FeedLoader) {
-        self.feedLoader = feedLoader
+    init(viewModel: FeedViewModel) {
+        self.viewModel = viewModel
     }
     
     func refresh() {
@@ -29,12 +21,28 @@ final class FeedRefreshViewController: NSObject {
     
     @objc private func load() {
         view.beginRefreshing()
-        feedLoader.load { [weak self] result in
-            if let feed = try? result.get() {
-                self?.onRefresh?(feed)
+        viewModel.onChanged = { [weak self] viewModel in
+            if viewModel.isLoading {
+                self?.view.beginRefreshing()
+            } else {
+                self?.view.endRefreshing()
             }
-            
-            self?.view.endRefreshing()
         }
+        
+        viewModel.loadFeed()
+    }
+    
+    private func binded(_ view: UIRefreshControl) -> UIRefreshControl {
+        viewModel.onChanged = { viewModel in
+            if viewModel.isLoading {
+                view.beginRefreshing()
+            } else {
+                view.endRefreshing()
+            }
+        }
+        
+        view.addTarget(self, action: #selector(load), for: .valueChanged)
+        
+        return view
     }
 }
