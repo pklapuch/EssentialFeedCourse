@@ -1,0 +1,14 @@
+//
+//  FeedImageCell.swift
+//  EssentialFeediOS
+//
+//  Created by Pawel Klapuch on 4/30/23.
+//
+
+import UIKit
+
+public final class FeedImageCell: UITableViewCell {
+    public let locationContainer = UIView()
+    public let locationLabel = UILabel()
+    public let descriptionLabel = UILabel()
+}
