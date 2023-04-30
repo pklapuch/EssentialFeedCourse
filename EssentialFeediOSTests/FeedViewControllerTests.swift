@@ -30,7 +30,7 @@ final class FeedViewControllerTests: XCTestCase {
         sut.simulateUserInitiatedFeedReload()
         XCTAssertEqual(sut.isShowingLoadingIndicator, true, "Expected loading indicator once user initiates a reload")
 
-        loader.completeFeedLoading(at: 1)
+        loader.completeFeedLoadingWithError(at: 1)
         XCTAssertEqual(sut.isShowingLoadingIndicator, false, "Expected no loading indicator once user initiated loading is completed")
     }
     
