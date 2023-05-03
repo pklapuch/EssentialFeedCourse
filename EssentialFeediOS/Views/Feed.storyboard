@@ -37,6 +37,7 @@
                                 <constraint firstAttribute="bottom" secondItem="DmL-HC-95S" secondAttribute="bottom" constant="8" id="qaW-e1-v2k"/>
                             </constraints>
                             <connections>
+                                <outlet property="label" destination="DmL-HC-95S" id="yX3-iP-PT5"/>
                                 <outletCollection property="gestureRecognizers" destination="Je6-1L-0eq" appends="YES" id="Cog-2V-IYL"/>
                             </connections>
                         </view>
