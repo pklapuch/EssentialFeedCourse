@@ -23,7 +23,7 @@ jobs:
       
       - name: Build
         env:
-          scheme: ${{ '$default' }}
+          scheme: ${{ 'default' }}
         run: |
             if [ $scheme = default ]; then scheme=$(cat default); fi
             xcodebuild clean build analyze -project EssentialFeed/EssentialFeed.xcodeproj -scheme "$scheme" | xcpretty && exit ${PIPESTATUS[0]}
