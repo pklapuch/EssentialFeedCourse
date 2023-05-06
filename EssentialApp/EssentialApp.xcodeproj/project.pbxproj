@@ -13,13 +13,11 @@
 		35B3392A2A06C8CC00E69B22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B339282A06C8CC00E69B22 /* Main.storyboard */; };
 		35B3392C2A06C8CF00E69B22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B3392B2A06C8CF00E69B22 /* Assets.xcassets */; };
 		35B3392F2A06C8CF00E69B22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B3392D2A06C8CF00E69B22 /* LaunchScreen.storyboard */; };
-		35B3393A2A06C8CF00E69B22 /* EssentialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B339392A06C8CF00E69B22 /* EssentialAppTests.swift */; };
-		35B339442A06C8CF00E69B22 /* EssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B339432A06C8CF00E69B22 /* EssentialAppUITests.swift */; };
-		35B339462A06C8CF00E69B22 /* EssentialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B339452A06C8CF00E69B22 /* EssentialAppUITestsLaunchTests.swift */; };
 		35B339552A06CB0D00E69B22 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339532A06CB0D00E69B22 /* EssentialFeed.framework */; };
 		35B339562A06CB0D00E69B22 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339532A06CB0D00E69B22 /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35B339572A06CB0D00E69B22 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */; };
 		35B339582A06CB0D00E69B22 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B3395B2A06D47C00E69B22 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B3395A2A06D47C00E69B22 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +62,10 @@
 		35B3392E2A06C8CF00E69B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35B339302A06C8CF00E69B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B339352A06C8CF00E69B22 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35B339392A06C8CF00E69B22 /* EssentialAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppTests.swift; sourceTree = "<group>"; };
 		35B3393F2A06C8CF00E69B22 /* EssentialAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35B339432A06C8CF00E69B22 /* EssentialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUITests.swift; sourceTree = "<group>"; };
-		35B339452A06C8CF00E69B22 /* EssentialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		35B339532A06CB0D00E69B22 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35B3395A2A06D47C00E69B22 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +133,7 @@
 		35B339382A06C8CF00E69B22 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				35B339392A06C8CF00E69B22 /* EssentialAppTests.swift */,
+				35B3395A2A06D47C00E69B22 /* Tests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -145,8 +141,6 @@
 		35B339422A06C8CF00E69B22 /* EssentialAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				35B339432A06C8CF00E69B22 /* EssentialAppUITests.swift */,
-				35B339452A06C8CF00E69B22 /* EssentialAppUITestsLaunchTests.swift */,
 			);
 			path = EssentialAppUITests;
 			sourceTree = "<group>";
@@ -232,6 +226,7 @@
 					};
 					35B339342A06C8CF00E69B22 = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 						TestTargetID = 35B3391E2A06C8CC00E69B22;
 					};
 					35B3393E2A06C8CF00E69B22 = {
@@ -302,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B3393A2A06C8CF00E69B22 /* EssentialAppTests.swift in Sources */,
+				35B3395B2A06D47C00E69B22 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,8 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B339442A06C8CF00E69B22 /* EssentialAppUITests.swift in Sources */,
-				35B339462A06C8CF00E69B22 /* EssentialAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +516,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y545S76C5X;
@@ -532,6 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pawelklapuch.EssentialAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EssentialApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EssentialApp";
@@ -543,6 +538,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y545S76C5X;
