@@ -22,8 +22,8 @@ jobs:
           echo Using scheme: $scheme
       
       - name: Build
-        env:
-          scheme: ''${{ 'default' }}''
+#        env:
+#          scheme: ''${{ 'default' }}''
         run: xcodebuild clean build analyze -project EssentialFeed/EssentialFeed.xcodeproj -scheme "$scheme" | xcpretty && exit ${PIPESTATUS[0]}
 #      - name: Test macOS
 #        env:
