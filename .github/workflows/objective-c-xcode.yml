@@ -23,7 +23,7 @@ jobs:
       
       - name: Build
         env:
-          scheme: ${{ 'default' }}
+          scheme: ${{ '$default' }}
         run: xcodebuild clean build analyze -project EssentialFeed/EssentialFeed.xcodeproj -scheme "$scheme" | xcpretty && exit ${PIPESTATUS[0]}
         
 #      - name: Test macOS
