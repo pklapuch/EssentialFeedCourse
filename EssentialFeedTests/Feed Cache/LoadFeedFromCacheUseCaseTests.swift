@@ -6,14 +6,14 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
         
-        XCTAssertEqual(store.messages, [])
+        XCTAssertEqual(store.receivedMessages, [])
     }
     
     func test_load_requestsCacheRetrieval() {
         let (sut, store) = makeSUT()
         
         sut.load { _ in }
-        XCTAssertEqual(store.messages, [.retrieve])
+        XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     func test_load_failsOnRetrievalError() {
@@ -72,7 +72,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load { _ in }
         store.completeRetrieval(with: anyNSError())
         
-        XCTAssertEqual(store.messages, [.retrieve])
+        XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     func test_load_hasNoSideEffectsOnEmptyCache() {
@@ -81,7 +81,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load { _ in }
         store.completeRetrievalWithEmptyCache()
         
-        XCTAssertEqual(store.messages, [.retrieve])
+        XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     func test_load_hasNoSideEffectsOnNonExpiredCache() {
@@ -93,7 +93,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load { _ in }
         store.completeRetrieval(with: feed.local, timestamp: nonExpiredTimestamp)
         
-        XCTAssertEqual(store.messages, [.retrieve])
+        XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     func test_load_hasNoSideEffectsOnCacheExpiration() {
@@ -105,7 +105,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load { _ in }
         store.completeRetrieval(with: feed.local, timestamp: expirationTimestamp)
         
-        XCTAssertEqual(store.messages, [.retrieve])
+        XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     func test_load_hasNoSideEffectsOnExpiredCache() {
@@ -117,7 +117,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load { _ in }
         store.completeRetrieval(with: feed.local, timestamp: expiredTimestamp)
         
-        XCTAssertEqual(store.messages, [.retrieve])
+        XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
