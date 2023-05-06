@@ -20,11 +20,10 @@ jobs:
           default='CI_iOS'
           echo Using default scheme: $default
       
-#      - name: Build
-#        env:
-#          scheme: ''${{ 'default' }}''
-#        run: |
-#          xcodebuild clean build analyze -project EssentialFeed/EssentialFeed.xcodeproj -scheme "$scheme" | xcpretty && exit ${PIPESTATUS[0]}
+      - name: Build
+        env:
+          scheme: ''${{ 'default' }}''
+        run: xcodebuild clean build analyze -project EssentialFeed/EssentialFeed.xcodeproj -scheme "$scheme" | xcpretty && exit ${PIPESTATUS[0]}
 #      - name: Test macOS
 #        env:
 #          scheme: ${{ 'default' }}
