@@ -19,6 +19,7 @@ jobs:
         run: |
           default='CI_iOS'
           echo Using default scheme: $default
+          echo Using scheme: $scheme
       
       - name: Build
         env:
