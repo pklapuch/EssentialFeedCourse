@@ -17,9 +17,8 @@ jobs:
       - name: Set Default Scheme
         run: |
           default='CI_iOS'
-          echo $default | cat >default
           echo Using default scheme: $default
-      - name: Build EssentailFeed
+      - name: Build
         env:
           scheme: ''${{ 'default' }}''
         run: |
