@@ -9,7 +9,15 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:EssentialApp.xcodeproj",
+          "identifier" : "35B3391E2A06C8CC00E69B22",
+          "name" : "EssentialApp"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:EssentialApp.xcodeproj",
       "identifier" : "35B3391E2A06C8CC00E69B22",
@@ -18,7 +26,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:EssentialApp.xcodeproj",
         "identifier" : "35B339342A06C8CF00E69B22",
