@@ -18,7 +18,6 @@
 		35B339562A06CB0D00E69B22 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339532A06CB0D00E69B22 /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35B339572A06CB0D00E69B22 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */; };
 		35B339582A06CB0D00E69B22 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		35B3395B2A06D47C00E69B22 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B3395A2A06D47C00E69B22 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		35B339352A06C8CF00E69B22 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B339532A06CB0D00E69B22 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		35B3395A2A06D47C00E69B22 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 		35B339382A06C8CF00E69B22 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				35B3395A2A06D47C00E69B22 /* Tests.swift */,
 				353AD3D92A0B135300AD6026 /* RemoteWithLocalFeedLoaderTests.swift */,
 			);
 			path = EssentialAppTests;
@@ -247,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				353AD3DA2A0B135300AD6026 /* RemoteWithLocalFeedLoaderTests.swift in Sources */,
-				35B3395B2A06D47C00E69B22 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
