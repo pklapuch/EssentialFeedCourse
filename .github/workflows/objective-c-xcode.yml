@@ -21,15 +21,10 @@ jobs:
             
       - name: Build EssentialApp
         run: |
-            xcodebuild clean build analyze -project EssentialApp/EssentialApp.xcodeproj -scheme "EssentialApp" | xcpretty && exit ${PIPESTATUS[0]}
+            xcodebuild clean build analyze -workspace EssentialApp/EssentialApp.xcworkspace -scheme "EssentialApp" | xcpretty && exit ${PIPESTATUS[0]}
             
       - name: Test EssentialFeed macOS
         run: xcodebuild clean build test -project EssentialFeed/EssentialFeed.xcodeproj -scheme "CI_macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk macosx -destination "platform=macOS" ONLY_ACTIVE_ARCH=YES
         
       - name: Test EssentialFeed iOS
         run: xcodebuild clean build test -project EssentialFeed/EssentialFeed.xcodeproj -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14" ONLY_ACTIVE_ARCH=YES
-        
-      - name: Test EssentialApp
-        run: xcodebuild clean build test -project EssentialApp/EssentialApp.xcodeproj -scheme "EssentialApp" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14" ONLY_ACTIVE_ARCH=YES
-
-
