@@ -201,7 +201,6 @@
 		35C25D2529FDD43500FF91EB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		35C25D2729FEBA5900FF91EB /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		35C25D2929FEC26600FF91EB /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
-		35C25D2B29FED86000FF91EB /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_iOS.xctestplan; sourceTree = "<group>"; };
 		35C25D2C29FED87C00FF91EB /* CI_macOS.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CI_macOS.xctestplan; sourceTree = "<group>"; };
 		35C25D2F29FEDBD500FF91EB /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 		35C25D3629FEE12300FF91EB /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
@@ -331,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				35C25D2C29FED87C00FF91EB /* CI_macOS.xctestplan */,
-				35C25D2B29FED86000FF91EB /* CI_iOS.xctestplan */,
 				3530705D29CF7B9700EC49FD /* EssentialFeed */,
 				3530706729CF7B9700EC49FD /* EssentialFeedTests */,
 				35CE19D929EE1C66008DE598 /* EssentialFeedAPIEndToEndTests */,
