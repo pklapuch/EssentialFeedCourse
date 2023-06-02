@@ -101,6 +101,7 @@
 		35E7D05A2A2A6FBF00BDDD5D /* ImageComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0592A2A6FBF00BDDD5D /* ImageComment.swift */; };
 		35E7D0642A2A7D3F00BDDD5D /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0632A2A7D3F00BDDD5D /* RemoteLoader.swift */; };
 		35E7D0662A2A7D5F00BDDD5D /* RemoteLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0652A2A7D5F00BDDD5D /* RemoteLoaderTests.swift */; };
+		35E7D0682A2A863B00BDDD5D /* FeedItemsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0672A2A863B00BDDD5D /* FeedItemsMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +230,7 @@
 		35E7D0592A2A6FBF00BDDD5D /* ImageComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComment.swift; sourceTree = "<group>"; };
 		35E7D0632A2A7D3F00BDDD5D /* RemoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
 		35E7D0652A2A7D5F00BDDD5D /* RemoteLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoaderTests.swift; sourceTree = "<group>"; };
+		35E7D0672A2A863B00BDDD5D /* FeedItemsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +405,7 @@
 			children = (
 				3530707829CFAB6500EC49FD /* LoadFeedFromRemoteUseCaseTests.swift */,
 				35B370402A069DD6005490AE /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
+				35E7D0672A2A863B00BDDD5D /* FeedItemsMapperTests.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -947,6 +950,7 @@
 				355D69A329F5B9FD008988C9 /* FeedCacheTestHelpers.swift in Sources */,
 				35B370482A06A707005490AE /* URLProtocolStub.swift in Sources */,
 				35C927FE29F59ED200287905 /* ValidateFeedCacheUseCaseTests.swift in Sources */,
+				35E7D0682A2A863B00BDDD5D /* FeedItemsMapperTests.swift in Sources */,
 				352952382A03207E000A7ED3 /* FeedPresenterTests.swift in Sources */,
 				35B370412A069DD6005490AE /* LoadFeedImageDataFromRemoteUseCaseTests.swift in Sources */,
 				3530707929CFAB6500EC49FD /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,

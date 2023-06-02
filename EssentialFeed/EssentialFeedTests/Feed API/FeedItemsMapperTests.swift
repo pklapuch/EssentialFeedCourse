@@ -1,14 +1,14 @@
 //
-//  LoadFeedFromRemoteUseCaseTests.swift
+//  FeedItemsMapperTests.swift
 //  EssentialFeedTests
 //
-//  Created by Pawel Klapuch on 3/25/23.
+//  Created by Pawel Klapuch on 6/2/23.
 //
 
 import XCTest
 import EssentialFeed
 
-class LoadFeedFromRemoteUseCaseTests: XCTestCase {
+class FeedItemsMapperTests: XCTestCase {
 
     func test_map_throwsErrorOnNon200HTTPResponse() throws {
         let json = makeItemsJSON([])
@@ -78,6 +78,7 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         let json = ["items": items]
         return try! JSONSerialization.data(withJSONObject: json)
     }
+
 }
 
 private extension HTTPURLResponse {
