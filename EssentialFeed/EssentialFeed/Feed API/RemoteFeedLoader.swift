@@ -44,6 +44,10 @@ public final class RemoteFeedLoader: FeedLoader {
             return .failure(error)
         }
     }
+
+    deinit {
+        print("remote feed loader: deinit")
+    }
 }
 
 private extension Array where Element == RemoteFeedItem {
