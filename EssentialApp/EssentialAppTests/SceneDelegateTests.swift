@@ -19,6 +19,7 @@ class SceneDelegateTests: XCTestCase {
         sut.configureWindow()
 
         XCTAssertFalse(window.isHidden, "Expected window to be visible")
+        XCTAssertFalse(window.isKeyWindow, "Expected window to be key")
     }
 
     func test_configureWindow_configuresRootViewController() {
