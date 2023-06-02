@@ -34,6 +34,7 @@
 		35B339562A06CB0D00E69B22 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339532A06CB0D00E69B22 /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35B339572A06CB0D00E69B22 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */; };
 		35B339582A06CB0D00E69B22 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35E7D0512A2A5F5B00BDDD5D /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0502A2A5F5B00BDDD5D /* CombineHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		35B339352A06C8CF00E69B22 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B339532A06CB0D00E69B22 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B339542A06CB0D00E69B22 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E7D0502A2A5F5B00BDDD5D /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				35B3392B2A06C8CF00E69B22 /* Assets.xcassets */,
 				35B3392D2A06C8CF00E69B22 /* LaunchScreen.storyboard */,
 				35B339302A06C8CF00E69B22 /* Info.plist */,
+				35E7D0502A2A5F5B00BDDD5D /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E7D0512A2A5F5B00BDDD5D /* CombineHelpers.swift in Sources */,
 				357FD36E2A2554C100A831EF /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				357FD36A2A2554C100A831EF /* FeedViewAdapter.swift in Sources */,
 				35B339232A06C8CC00E69B22 /* AppDelegate.swift in Sources */,
