@@ -4,6 +4,7 @@
 //
 //  Created by Pawel Klapuch on 4/30/23.
 //
+
 import UIKit
 import Combine
 import EssentialFeed
@@ -16,7 +17,7 @@ public final class FeedUIComposer {
         feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>,
         imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher
     ) -> FeedViewController {
-        let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: feedLoader)
+        let presentationAdapter = LoadResourcePresentationAdapter<[FeedImage], FeedViewAdapter>(loader: feedLoader)
 
         let feedController = makeFeedViewController(
             delegate: presentationAdapter,
