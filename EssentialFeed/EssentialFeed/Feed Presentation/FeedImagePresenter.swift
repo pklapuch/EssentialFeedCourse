@@ -15,7 +15,7 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
         self.view = view
         self.imageTransformer = imageTransformer
     }
-    
+
     public func didStartLoadingImageData(for model: FeedImage) {
         view.display(FeedImageViewModel(
             description: model.description,
@@ -24,7 +24,7 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
             isLoading: true,
             shouldRetry: false))
     }
-    
+
     public func didFinishLoadingImageData(with data: Data, for model: FeedImage) {
         let image = imageTransformer(data)
         view.display(FeedImageViewModel(
@@ -34,7 +34,7 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
             isLoading: false,
             shouldRetry: image == nil))
     }
-    
+
     public func didFinishLoadingImageData(with error: Error, for model: FeedImage) {
         view.display(FeedImageViewModel(
             description: model.description,
@@ -42,5 +42,14 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
             image: nil,
             isLoading: false,
             shouldRetry: true))
+    }
+
+    public static func map(_ image: FeedImage) -> FeedImageViewModel<Image> {
+        FeedImageViewModel(
+            description: image.description,
+            location: image.location,
+            image: nil,
+            isLoading: false,
+            shouldRetry: false)
     }
 }
