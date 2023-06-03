@@ -97,6 +97,8 @@
 		35E7D0702A2A8C9F00BDDD5D /* FeedImageDataMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D06F2A2A8C9F00BDDD5D /* FeedImageDataMapperTests.swift */; };
 		35E7D0732A2B834D00BDDD5D /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0722A2B834D00BDDD5D /* LoadResourcePresenterTests.swift */; };
 		35E7D0762A2B836F00BDDD5D /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D0752A2B836F00BDDD5D /* LoadResourcePresenter.swift */; };
+		35E7D0792A2B8A2700BDDD5D /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35E7D07B2A2B8A2700BDDD5D /* Shared.strings */; };
+		35E7D07F2A2B8A8B00BDDD5D /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7D07E2A2B8A8B00BDDD5D /* SharedLocalizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +223,10 @@
 		35E7D06F2A2A8C9F00BDDD5D /* FeedImageDataMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataMapperTests.swift; sourceTree = "<group>"; };
 		35E7D0722A2B834D00BDDD5D /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
 		35E7D0752A2B836F00BDDD5D /* LoadResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenter.swift; sourceTree = "<group>"; };
+		35E7D07A2A2B8A2700BDDD5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
+		35E7D07C2A2B8A2C00BDDD5D /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
+		35E7D07D2A2B8A2D00BDDD5D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
+		35E7D07E2A2B8A8B00BDDD5D /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -650,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				35E7D0722A2B834D00BDDD5D /* LoadResourcePresenterTests.swift */,
+				35E7D07E2A2B8A8B00BDDD5D /* SharedLocalizationTests.swift */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -658,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				35E7D0752A2B836F00BDDD5D /* LoadResourcePresenter.swift */,
+				35E7D07B2A2B8A2700BDDD5D /* Shared.strings */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -856,6 +864,7 @@
 			files = (
 				352952422A032857000A7ED3 /* Feed.strings in Resources */,
 				35C25D2D29FED87C00FF91EB /* CI_macOS.xctestplan in Resources */,
+				35E7D0792A2B8A2700BDDD5D /* Shared.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +970,7 @@
 				35B3704A2A06A9A9005490AE /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */,
 				35CC26CA29F4A24700E1A8D0 /* FeedStoreSpy.swift in Sources */,
 				35CEF2CF29FB123100D32BD2 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
+				35E7D07F2A2B8A8B00BDDD5D /* SharedLocalizationTests.swift in Sources */,
 				355D69A529F5BAA4008988C9 /* SharedTestHelpers.swift in Sources */,
 				35B370542A06B16F005490AE /* CoreDataFeedImageDataStoreTests.swift in Sources */,
 				35CEF2D129FB125C00D32BD2 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
@@ -1066,6 +1076,16 @@
 				3529523F2A03269B000A7ED3 /* pt-BR */,
 			);
 			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+		35E7D07B2A2B8A2700BDDD5D /* Shared.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35E7D07A2A2B8A2700BDDD5D /* en */,
+				35E7D07C2A2B8A2C00BDDD5D /* el */,
+				35E7D07D2A2B8A2D00BDDD5D /* pt-BR */,
+			);
+			name = Shared.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
