@@ -18,8 +18,8 @@ class SceneDelegateTests: XCTestCase {
 
         sut.configureWindow()
 
+        XCTAssertTrue(window.isKeyWindow, "Expected window to be the key window")
         XCTAssertFalse(window.isHidden, "Expected window to be visible")
-        XCTAssertFalse(window.isKeyWindow, "Expected window to be key")
     }
 
     func test_configureWindow_configuresRootViewController() {
@@ -33,6 +33,7 @@ class SceneDelegateTests: XCTestCase {
         let topController = rootNavigation?.topViewController
 
         XCTAssertNotNil(rootNavigation, "Expected a navigation controller as root, got \(String(describing: root)) instead")
-        XCTAssertTrue(topController is FeedViewController, "Expected a feed controller as top view controller, got \(String(describing: topController)) instead")
+        XCTAssertTrue(topController is ListViewController, "Expected a feed controller as top view controller, got \(String(describing: topController)) instead")
     }
+
 }
