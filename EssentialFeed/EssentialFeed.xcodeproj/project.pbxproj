@@ -29,6 +29,7 @@
 		35143C482A2BC8FD001028FC /* IMAGE_COMMENTS_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35143C462A2BC8FD001028FC /* IMAGE_COMMENTS_dark.png */; };
 		35143C492A2BC8FD001028FC /* IMAGE_COMMENTS_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 35143C472A2BC8FD001028FC /* IMAGE_COMMENTS_light.png */; };
 		35143C4B2A2BCAA5001028FC /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35143C4A2A2BCAA5001028FC /* CellController.swift */; };
+		352060302A2BE36C000F3212 /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520602F2A2BE36C000F3212 /* UIView+Container.swift */; };
 		352410CA29F0B03A0054F411 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352410C929F0B03A0054F411 /* LocalFeedImage.swift */; };
 		35294FE429F5C23B008D13DE /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35294FE329F5C23B008D13DE /* FeedCachePolicy.swift */; };
 		352952232A0306A3000A7ED3 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 352952252A0306A3000A7ED3 /* Feed.strings */; };
@@ -178,6 +179,7 @@
 		35143C462A2BC8FD001028FC /* IMAGE_COMMENTS_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_dark.png; sourceTree = "<group>"; };
 		35143C472A2BC8FD001028FC /* IMAGE_COMMENTS_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_light.png; sourceTree = "<group>"; };
 		35143C4A2A2BCAA5001028FC /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		3520602F2A2BE36C000F3212 /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
 		352410C929F0B03A0054F411 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		35294FE329F5C23B008D13DE /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		352952242A0306A3000A7ED3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				352952522A032E50000A7ED3 /* UIRefreshControl+Helpers.swift */,
 				35C25D5D2A007C9600FF91EB /* UITableView+Dequeueing.swift */,
 				357FD38B2A256F4D00A831EF /* UITableView+HeaderSizing.swift */,
+				3520602F2A2BE36C000F3212 /* UIView+Container.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 				35C25D3729FEE12300FF91EB /* FeedImageCellController.swift in Sources */,
 				35C25D602A007D2E00FF91EB /* UIImageView+Animations.swift in Sources */,
 				35143C3C2A2BC868001028FC /* ImageCommentCellController.swift in Sources */,
+				352060302A2BE36C000F3212 /* UIView+Container.swift in Sources */,
 				352952502A032C70000A7ED3 /* ErrorView.swift in Sources */,
 				35143C3F2A2BC892001028FC /* ImageCommentCell.swift in Sources */,
 			);
