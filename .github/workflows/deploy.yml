@@ -66,5 +66,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app
-          path: ${{ runner.temp }}/build/I\ am\ Groot.ipa
+          path: ${{ runner.temp }}/build/EssentialApp.ipa
           retention-days: 3
