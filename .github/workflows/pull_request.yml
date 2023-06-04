@@ -1,4 +1,4 @@
-name: Xcode - Build, Analyze and Test
+name: Test All Modules (iOS & mac)
 
 on:
   pull_request:
