@@ -21,6 +21,9 @@ jobs:
       #- name: Select Xcode 14.2
       #  run: sudo xcode-select -s /Applications/Xcode_14.2.app && xcodebuild -version
 
+      - name: Show Available Destinations
+        run: xcodebuild -workspace EssentialApp/EssentialApp.xcworkspace -scheme CI_iOS -showdestinations
+  
       - name: Test `CI_iOS`
         env:
           scheme: ${{ 'CI_iOS' }}
