@@ -69,7 +69,7 @@ jobs:
           path: ${{ runner.temp }}/build/EssentialApp.ipa
           retention-days: 3
           
-     - name: Upload to Testflight
+      - name: Upload to Testflight
         if: success()
         env:
           APPLEID_USERNAME: ${{secrets.APPLEID_USERNAME}}
