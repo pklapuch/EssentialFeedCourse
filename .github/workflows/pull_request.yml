@@ -1,8 +1,6 @@
 name: Test All Modules (iOS & mac)
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
