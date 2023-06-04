@@ -27,7 +27,12 @@ jobs:
           platform: ${{ 'iOS Simulator' }}
         run: |
           device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"` 
-          xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "$scheme" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=$platform,name=$device" ONLY_ACTIVE_ARCH=YES
+          xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "$scheme" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=$platform,name=iPhone 14"
+          
+          
+          
+#"platform=$platform,name=$device"        
+# platform:iOS Simulator, OS:latest, name:iPhone 11
           
 #        run: xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -
 #        destination 'platform=iOS Simulator,name=iPhone 14,OS=15.4' ONLY_ACTIVE_ARCH=YES
