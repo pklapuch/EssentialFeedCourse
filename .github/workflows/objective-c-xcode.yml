@@ -15,25 +15,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name: Show the currently detailed version of Xcode for CLI
-      #   run: xcode-select -p
-
-      #- name: Select Xcode 14.2
-      #  run: sudo xcode-select -s /Applications/Xcode_14.2.app && xcodebuild -version
-
-      - name: Show Available Destinations
-        run: xcodebuild -workspace EssentialApp/EssentialApp.xcworkspace -scheme 'EssentialApp' -showdestinations
+      # - name: Show Available Destinations
+      #  run: xcodebuild -workspace EssentialApp/EssentialApp.xcworkspace -scheme 'EssentialApp' -showdestinations
   
       - name: Test `CI_iOS`
         env:
-          scheme: ${{ 'CI_iOS' }}
-          platform: ${{ 'iOS Simulator' }}
+          scheme: ${{ 'CI_iOS' }} 
+          platform: ${{ 'iOS Simulator' }} 
+          device: ${{ 'iPhone 14' }} 
+          os: ${{ '16.2' }}
         run: |
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"` 
-          xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "$scheme" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=$platform,name=iPhone 14"
+          xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "$scheme" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination 'platform=$platform,name=$device,OS=$os'
           
           
-          
+#device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`           
+#          { platform:iOS Simulator, id:88ABF059-9AC5-4465-A728-6697A0507B72, OS:16.2, name:iPhone 14 }
 #"platform=$platform,name=$device"        
 # platform:iOS Simulator, OS:latest, name:iPhone 11
           
