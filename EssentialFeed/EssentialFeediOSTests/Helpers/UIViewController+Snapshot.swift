@@ -55,7 +55,7 @@ private final class SnapshotWindow: UIWindow {
     }
 
     override var traitCollection: UITraitCollection {
-        return UITraitCollection(traitsFrom: [super.traitCollection, configuration.traitCollection])
+        return UITraitCollection(traitsFrom: [super.traitCollection])
     }
 
     func snapshot() -> UIImage {
