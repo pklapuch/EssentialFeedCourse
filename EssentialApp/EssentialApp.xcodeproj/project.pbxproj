@@ -205,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35B339492A06C8CF00E69B22 /* Build configuration list for PBXNativeTarget "EssentialApp" */;
 			buildPhases = (
+				35F406122A2D191600AAF7EC /* ShellScript */,
 				35B3391B2A06C8CC00E69B22 /* Sources */,
 				35B3391C2A06C8CC00E69B22 /* Frameworks */,
 				35B3391D2A06C8CC00E69B22 /* Resources */,
@@ -294,6 +295,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35F406122A2D191600AAF7EC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Bump build numer\"\n$SRCROOT/set_build_number_by_git_commits.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35B3391B2A06C8CC00E69B22 /* Sources */ = {
