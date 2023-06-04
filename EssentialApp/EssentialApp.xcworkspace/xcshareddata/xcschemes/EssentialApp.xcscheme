@@ -29,45 +29,10 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:EssentialApp.xctestplan"
+            reference = "container:../EssentialAppTests.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "35B339342A06C8CF00E69B22"
-               BuildableName = "EssentialAppTests.xctest"
-               BlueprintName = "EssentialAppTests"
-               ReferencedContainer = "container:EssentialApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "35B3393E2A06C8CF00E69B22"
-               BuildableName = "EssentialAppUITests.xctest"
-               BlueprintName = "EssentialAppUITests"
-               ReferencedContainer = "container:EssentialApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "355F1E142A24F01700A992A4"
-               BuildableName = "EssentialAppUIAcceptanceTests.xctest"
-               BlueprintName = "EssentialAppUIAcceptanceTests"
-               ReferencedContainer = "container:EssentialApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
