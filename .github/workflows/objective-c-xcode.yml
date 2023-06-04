@@ -22,18 +22,18 @@ jobs:
       #  run: sudo xcode-select -s /Applications/Xcode_14.2.app && xcodebuild -version
 
       - name: install simulator
-        run: xcversion simulators --install='iOS 16.2'
+        run: xcversion simulators --install='iOS 15.4'
 
-      - name: Prepare iOS 14.4 simulator
+      - name: Prepare iOS 15.4 simulator
         run: |
             sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-            sudo ln -s /Applications/Xcode_12.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 16.2.simruntime
+            sudo ln -s /Applications/Xcode_12.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 15.4.simruntime
             xcrun simctl list runtimes
-            xcrun simctl create iPhone_14 "iPhone 14" "com.apple.CoreSimulator.SimRuntime.iOS-16-2"
-            xcrun simctl list devices 16.2
+            xcrun simctl create iPhone_15 "iPhone 15" "com.apple.CoreSimulator.SimRuntime.iOS-15-4"
+            xcrun simctl list devices 15.4
     
       - name: Test EssentialFeed & EssentialApp (iOS)
-        run: xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2' ONLY_ACTIVE_ARCH=YES
+        run: xcodebuild test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=15.4' ONLY_ACTIVE_ARCH=YES
         
         
 # -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14"
